@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Layout from '../../components/layout'
+import utilStyles from '../../styles/utils.module.css'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 
 export default function Post({ postData }) {
@@ -16,6 +17,7 @@ export default function Post({ postData }) {
         </div>
         <img
           src={`/images/${postData.image}`}
+          className={utilStyles.image}
           alt={postData.title}
         />
       </main>
