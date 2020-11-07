@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import utilStyles from '../styles/utils.module.css'
 import Masonry from 'react-masonry-css'
+import Layout from '../components/layout'
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 
@@ -17,7 +18,7 @@ export default function Home({ allPostsData }) {
   });
 
   return (
-    <div>
+    <Layout home>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -28,7 +29,7 @@ export default function Home({ allPostsData }) {
           {childElements}
         </Masonry>
       </main>
-    </div>
+    </Layout>
   )
 }
 
