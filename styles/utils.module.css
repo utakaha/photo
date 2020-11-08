@@ -9,9 +9,12 @@
 }
 
 .header {
-  font-family: 'Bungee';
   display: grid;
-  grid-template-columns: repeat(2, 1fr);;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.navbar {
+  font-family: 'Bungee';
 }
 
 .desktopNav {
@@ -20,4 +23,51 @@
 
 .navItem {
   margin-right: 20px;
+}
+
+.masonryGrid {
+  display: flex;
+}
+
+.toggle,
+.mobileNav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);;
+  }
+
+  .masonryGrid {
+    display: block;
+  }
+
+  .listImage {
+    width: 100%;
+    margin-bottom: 20px;
+    vertical-align: bottom;
+  }
+
+  .navItem {
+    margin: auto auto 5px;
+  }
+
+  .desktopNav {
+    display: none;
+  }
+
+  .toggle {
+    display: block;
+    margin: auto 0 auto auto;
+  }
+
+  .mobileNav.active {
+    width: 100%;
+    display: flex;
+    font-size: 20px;
+    margin-bottom: 40px;
+    flex-direction: column;
+  }
 }

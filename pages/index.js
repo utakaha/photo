@@ -17,6 +17,11 @@ export default function Home({ allPostsData }) {
     );
   });
 
+  const breakpointColumnsObj = {
+    default: 3,
+    768: 1
+  };
+
   return (
     <Layout home>
       <Head>
@@ -25,7 +30,11 @@ export default function Home({ allPostsData }) {
       </Head>
 
       <main>
-        <Masonry breakpointCols={3} style={{display: 'flex'}}>
+
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className={utilStyles.masonryGrid}
+        >
           {childElements}
         </Masonry>
       </main>
