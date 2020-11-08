@@ -16,6 +16,7 @@ export default function Home({ allPostsData }) {
   const childElements = allPostsData.map((post) => {
     return (
       <Link
+        key={post.id}
         href={`/?postId=${post.id}`}
         as={`/posts/${post.id}`}
       >
@@ -50,6 +51,7 @@ export default function Home({ allPostsData }) {
         <Masonry
           breakpointCols={breakpointColumnsObj}
           className={utilStyles.masonryGrid}
+          columnClassName='my-masonry-grid_column'
         >
           {childElements}
         </Masonry>
