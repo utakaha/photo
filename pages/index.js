@@ -7,6 +7,7 @@ import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Modal from 'react-modal'
+import { isBrowser, isMobile } from 'react-device-detect'
 
 Modal.setAppElement('#__next')
 
@@ -14,18 +15,29 @@ export default function Home({ allPostsData }) {
   const router = useRouter()
 
   const childElements = allPostsData.map((post) => {
-    return (
-      <Link
-        key={post.id}
-        href={`/?postId=${post.id}`}
-        as={`/posts/${post.id}`}
-      >
-        <img
-          className={utilStyles.listImage}
-          src={`/images/${post.image}`}
-        />
-      </Link>
-    );
+    if (isMobile) {
+      return (
+        <Link key={post.id} href={`posts/${post.id}`}>
+          <img
+            className={utilStyles.listImage}
+            src={`/images/${post.image}`}
+          />
+        </Link>
+      )
+    } else {
+      return (
+        <Link
+          key={post.id}
+          href={`/?postId=${post.id}`}
+          as={`/posts/${post.id}`}
+        >
+          <img
+            className={utilStyles.listImage}
+            src={`/images/${post.image}`}
+          />
+        </Link>
+      )
+    }
   });
 
   const breakpointColumnsObj = {
@@ -48,15 +60,13 @@ export default function Home({ allPostsData }) {
         <Post id={router.query.postId} />
       </Modal>
 
-      <main>
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className={utilStyles.masonryGrid}
-          columnClassName='my-masonry-grid_column'
-        >
-          {childElements}
-        </Masonry>
-      </main>
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className={utilStyles.masonryGrid}
+        columnClassName='my-masonry-grid_column'
+      >
+        {childElements}
+      </Masonry>
     </Layout>
   )
 }
