@@ -5,23 +5,16 @@ import { getAllPostIds, getPostData } from '../../lib/posts'
 
 export default function PostPage({ postData }) {
   return (
-    // TODO
     <Layout>
       <Head>
         <title>{postData.title}</title>
       </Head>
 
-      <main>
-        <h1>{postData.title}</h1>
-        <div>
-          <p>{postData.date}</p>
-        </div>
-        <img
-          src={`/images/${postData.image}`}
-          className={utilStyles.image}
-          alt={postData.title}
-        />
-      </main>
+      <img
+        src={`/images/${postData.image}`}
+        className={utilStyles.image}
+        alt={postData.title}
+      />
     </Layout>
   )
 }
