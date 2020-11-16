@@ -1,9 +1,10 @@
 import utilStyles from '../styles/utils.module.css'
 import useSWR from 'swr'
+import { SITE_URL } from '../lib/constants'
 
 const fetcher = (id) =>
       fetch(
-        `http://localhost:3003/api/posts/${id}`
+        `${SITE_URL}/api/posts/${id}`
       ).then((response) => response.json());
 
 export default function Post({ id }) {
