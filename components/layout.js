@@ -10,7 +10,7 @@ export default function Layout({ children, home }) {
     <div className={styles.container}>
       <Head>
         <title>{SITE_TITLE}</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/favicon.ico" />
         <meta charset="utf-8" />
         <meta property="og:locale" content="ja_JP" />
         <meta property="og:site_name" content={SITE_TITLE} />
