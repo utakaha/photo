@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import utilStyles from '../styles/utils.module.css'
 import Masonry from 'react-masonry-css'
 import Layout from '../components/layout'
@@ -47,11 +46,6 @@ export default function Home({ allPostsData }) {
 
   return (
     <Layout home>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <Modal
         isOpen={!!router.query.postId}
         onRequestClose={() => router.push('/')}
