@@ -19,7 +19,7 @@ export default function Home({ allPostsData }) {
         <Link key={post.id} href={`posts/${post.id}`}>
           <img
             className={utilStyles.listImage}
-            src={`/images/${post.image}`}
+            src={`/photos/${post.id}.jpg`}
           />
         </Link>
       )
@@ -32,7 +32,7 @@ export default function Home({ allPostsData }) {
         >
           <img
             className={utilStyles.listImage}
-            src={`/images/${post.image}`}
+            src={`/photos/${post.id}.jpg`}
           />
         </Link>
       )

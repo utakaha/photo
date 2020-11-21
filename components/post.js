@@ -17,9 +17,8 @@ export default function Post({ id }) {
     <div className={utilStyles.modalItem}>
       <div className={utilStyles.imgContener}>
         <img
-          src={`/images/${data.image}`}
+          src={`/photos/${data.id}.jpg`}
           className={utilStyles.modalImage}
-          alt={data.title}
         />
       </div>
     </div>
