@@ -2,7 +2,7 @@ import utilStyles from '../styles/utils.module.css'
 import Masonry from 'react-masonry-css'
 import Layout from '../components/layout'
 import Post from '../components/post'
-import { getSortedPostsData } from '../lib/posts'
+import { getPostsData } from '../lib/posts'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Modal from 'react-modal'
@@ -66,7 +66,7 @@ export default function Home({ allPostsData }) {
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
+  const allPostsData = getPostsData()
   return {
     props: {
       allPostsData
