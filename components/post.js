@@ -2,6 +2,7 @@ import utilStyles from '../styles/utils.module.css'
 import useSWR from 'swr'
 import fetch from 'node-fetch'
 import { SITE_URL } from '../lib/constants'
+import Link from 'next/link'
 
 const fetcher = (id) =>
       fetch(
@@ -21,6 +22,18 @@ export default function Post({ id }) {
           src={`/photos/${data.id}.jpg`}
           className={utilStyles.modalImage}
         />
+      </div>
+
+      <div className={utilStyles.unsplash}>
+        <Link href={`https://unsplash.com/photos/${data.id}`}>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            className={utilStyles.unsplashLink}
+          >
+            Unsplash
+          </a>
+        </Link>
       </div>
     </div>
   )
