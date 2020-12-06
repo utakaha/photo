@@ -2,7 +2,7 @@ import utilStyles from '../styles/utils.module.css'
 import Masonry from 'react-masonry-css'
 import Layout from '../components/layout'
 import Post from '../components/post'
-import { getPostsData } from '../lib/posts'
+import { getPhotosData } from '../lib/posts'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Modal from 'react-modal'
@@ -10,29 +10,29 @@ import { isMobile } from 'react-device-detect'
 
 Modal.setAppElement('#__next')
 
-export default function Home({ allPostsData }) {
+export default function Home({ allPhotosData }) {
   const router = useRouter()
 
-  const childElements = allPostsData.map((post) => {
+  const childElements = allPhotosData.map((photo) => {
     if (isMobile) {
       return (
-        <Link key={post.id} href={`posts/${post.id}`}>
+        <Link key={photo.id} href={`posts/${photo.id}`}>
           <img
             className={utilStyles.listImage}
-            src={`/photos/${post.id}.jpg`}
+            src={`/photos/${photo.id}.jpg`}
           />
         </Link>
       )
     } else {
       return (
         <Link
-          key={post.id}
-          href={`/?postId=${post.id}`}
-          as={`/posts/${post.id}`}
+          key={photo.id}
+          href={`/?postId=${photo.id}`}
+          as={`/posts/${photo.id}`}
         >
           <img
             className={utilStyles.listImage}
-            src={`/photos/${post.id}.jpg`}
+            src={`/photos/${photo.id}.jpg`}
           />
         </Link>
       )
@@ -66,10 +66,10 @@ export default function Home({ allPostsData }) {
 }
 
 export async function getStaticProps() {
-  const allPostsData = getPostsData()
+  const allPhotosData = getPhotosData()
   return {
     props: {
-      allPostsData
+      allPhotosData
     }
   }
 }
