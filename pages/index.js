@@ -1,7 +1,7 @@
 import homeStyles from '../styles/home.module.css'
 import Layout from '../components/layout'
 import ModalPhoto from '../components/modal-photo'
-import { getPhotosData } from '../lib/posts'
+import { getPhotosData } from '../lib/photo'
 import { useRouter } from 'next/router'
 import Modal from 'react-modal'
 import Photos from '../components/photos'

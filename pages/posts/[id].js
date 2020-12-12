@@ -1,6 +1,6 @@
 import Layout from '../../components/layout'
 import styles from '../../styles/photo.module.css'
-import { getAllPostIds } from '../../lib/posts'
+import { getAllPhotoIds } from '../../lib/photo'
 import Link from 'next/link'
 
 export default function PostPage({ id }) {
@@ -26,7 +26,7 @@ export default function PostPage({ id }) {
 }
 
 export async function getStaticPaths() {
-  const paths = getAllPostIds()
+  const paths = getAllPhotoIds()
   return {
     paths,
     fallback: false
