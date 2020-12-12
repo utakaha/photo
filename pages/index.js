@@ -1,6 +1,6 @@
 import homeStyles from '../styles/home.module.css'
 import Layout from '../components/layout'
-import Post from '../components/post'
+import ModalPhoto from '../components/modal-photo'
 import { getPhotosData } from '../lib/posts'
 import { useRouter } from 'next/router'
 import Modal from 'react-modal'
@@ -18,7 +18,7 @@ export default function Home({ allPhotosData }) {
         onRequestClose={() => router.push('/')}
         className={homeStyles.modal}
       >
-        <Post id={router.query.postId} />
+        <ModalPhoto id={router.query.postId} />
       </Modal>
 
       <Photos photosData={allPhotosData} />

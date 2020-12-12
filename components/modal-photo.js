@@ -9,7 +9,7 @@ const fetcher = (id) =>
         `${SITE_URL}/api/posts/${id}`
       ).then((response) => response.json());
 
-export default function Post({ id }) {
+export default function ModalPhoto({ id }) {
   const { data, error } = useSWR(id, fetcher)
 
   if (error) return <div>failed to load</div>
