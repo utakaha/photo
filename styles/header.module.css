@@ -1,0 +1,50 @@
+.navbar {
+  font-family: 'Bungee';
+}
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.desktopNav {
+  margin: auto 0 auto auto;
+  font-size: 17px;
+}
+
+.navItem {
+  margin-left: 20px;
+}
+
+.toggle,
+.mobileNav {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);;
+  }
+
+  .navItem {
+    margin: auto auto 5px;
+  }
+
+  .desktopNav {
+    display: none;
+  }
+
+  .toggle {
+    display: block;
+    margin: auto 0 auto auto;
+  }
+
+  .mobileNav.active {
+    width: 100%;
+    display: flex;
+    font-size: 20px;
+    margin-bottom: 40px;
+    flex-direction: column;
+  }
+}

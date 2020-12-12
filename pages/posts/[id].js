@@ -1,17 +1,17 @@
 import Layout from '../../components/layout'
-import postStyles from '../../styles/post.module.css'
+import styles from '../../styles/photo.module.css'
 import { getAllPostIds } from '../../lib/posts'
 import Link from 'next/link'
 
 export default function PostPage({ id }) {
   return (
     <Layout>
-      <div className={postStyles.unsplash}>
+      <div className={styles.unsplash}>
         <Link href={`https://unsplash.com/photos/${id}`}>
           <a
             target="_blank"
             rel="noopener noreferrer"
-            className={postStyles.unsplashLink}
+            className={styles.unsplashLink}
           >
             Unsplash
           </a>
@@ -19,7 +19,7 @@ export default function PostPage({ id }) {
       </div>
       <img
         src={`/photos/${id}.jpg`}
-        className={postStyles.image}
+        className={styles.image}
       />
     </Layout>
   )

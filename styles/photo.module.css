@@ -1,0 +1,62 @@
+.unsplash {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.unsplashLink {
+  border: 2px solid #757575;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: 'Bungee';
+}
+
+.unsplashLink:hover {
+  background: #757575;
+  color: white;
+}
+
+.image {
+  width: 100%;
+}
+
+a.image {
+  width: 100%;
+}
+
+.listImage {
+  width: 95%;
+  margin-bottom: 5%;
+  vertical-align: bottom;
+}
+
+.masonryGrid {
+  display: flex;
+}
+
+.modalItem {
+  margin: auto;
+  max-height: 80vh;
+  max-width: 100%;
+}
+
+.imgContener {
+  text-align: center;
+}
+
+.modalImage {
+  margin: 0 auto 0;
+  max-height: 70vh;
+  max-width: 100%;
+}
+
+@media (max-width: 700px) {
+  .masonryGrid {
+    display: block;
+  }
+
+  .listImage {
+    width: 100%;
+    margin-bottom: 20px;
+    vertical-align: bottom;
+  }
+}

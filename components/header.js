@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import utilStyles from '../styles/utils.module.css'
+import styles from '../styles/header.module.css'
 import Link from 'next/link'
 
 export default function Header() {
@@ -7,8 +7,8 @@ export default function Header() {
   const toggle = () => setMobileNavShown(!mobileNavShown)
 
   return (
-    <div className={utilStyles.navbar}>
-      <header className={utilStyles.header}>
+    <div className={styles.navbar}>
+      <header className={styles.header}>
         <h1>
           <Link
             href="/"
@@ -19,32 +19,32 @@ export default function Header() {
           </Link>
         </h1>
 
-        <nav className={utilStyles.desktopNav}>
+        <nav className={styles.desktopNav}>
           <Link href="https://instagram.com/iavivai">
-            <a rel="noopener noreferrer" target="_blank" className={utilStyles.navItem}>Instagram</a>
+            <a rel="noopener noreferrer" target="_blank" className={styles.navItem}>Instagram</a>
           </Link>
           <Link href="https://unsplash.com/@iavivai">
-            <a rel="noopener noreferrer" target="_blank" className={utilStyles.navItem}>Unsplash</a>
+            <a rel="noopener noreferrer" target="_blank" className={styles.navItem}>Unsplash</a>
           </Link>
           <Link href="https://iavivai.com/about">
-            <a rel="noopener noreferrer" target="_blank" className={utilStyles.navItem}>ABOUT</a>
+            <a rel="noopener noreferrer" target="_blank" className={styles.navItem}>ABOUT</a>
           </Link>
         </nav>
 
-        <span className={utilStyles.toggle} onClick={toggle}>
+        <span className={styles.toggle} onClick={toggle}>
           ▼
         </span>
       </header>
 
-      <nav className={`${utilStyles.mobileNav} ${mobileNavShown ? utilStyles.active : ''}`}>
+      <nav className={`${styles.mobileNav} ${mobileNavShown ? styles.active : ''}`}>
         <Link href="https://instagram.com/iavivai">
-          <a rel="noopener noreferrer" target="_blank" className={utilStyles.navItem}>Instagram</a>
+          <a rel="noopener noreferrer" target="_blank" className={styles.navItem}>Instagram</a>
         </Link>
         <Link href="https://unsplash.com/@iavivai">
-          <a rel="noopener noreferrer" target="_blank" className={utilStyles.navItem}>Unsplash</a>
+          <a rel="noopener noreferrer" target="_blank" className={styles.navItem}>Unsplash</a>
         </Link>
         <Link href="https://iavivai.com/about">
-          <a rel="noopener noreferrer" target="_blank" className={utilStyles.navItem}>ABOUT</a>
+          <a rel="noopener noreferrer" target="_blank" className={styles.navItem}>ABOUT</a>
         </Link>
       </nav>
     </div>

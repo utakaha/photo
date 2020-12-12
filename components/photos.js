@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { isMobile } from 'react-device-detect'
-import utilStyles from '../styles/utils.module.css'
+import styles from '../styles/photo.module.css'
 import Masonry from 'react-masonry-css'
 
 export default function Photos({ photosData }) {
@@ -9,7 +9,7 @@ export default function Photos({ photosData }) {
       return (
         <Link key={photo.id} href={`posts/${photo.id}`}>
           <img
-            className={utilStyles.listImage}
+            className={styles.listImage}
             src={`/photos/${photo.id}.jpg`}
           />
         </Link>
@@ -24,7 +24,7 @@ export default function Photos({ photosData }) {
           as={`/posts/${photo.id}`}
         >
           <img
-            className={utilStyles.listImage}
+            className={styles.listImage}
             src={`/photos/${photo.id}.jpg`}
           />
         </Link>
@@ -40,7 +40,7 @@ export default function Photos({ photosData }) {
   return (
     <Masonry
       breakpointCols={breakpoint}
-      className={utilStyles.masonryGrid}
+      className={styles.masonryGrid}
       columnClassName='my-masonry-grid_column'
     >
       {items}

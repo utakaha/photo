@@ -1,4 +1,4 @@
-import utilStyles from '../styles/utils.module.css'
+import styles from '../styles/photo.module.css'
 import useSWR from 'swr'
 import fetch from 'node-fetch'
 import { SITE_URL } from '../lib/constants'
@@ -16,20 +16,20 @@ export default function Post({ id }) {
   if (!data) return <div>loading...</div>
 
   return (
-    <div className={utilStyles.modalItem}>
-      <div className={utilStyles.imgContener}>
+    <div className={styles.modalItem}>
+      <div className={styles.imgContener}>
         <img
           src={`/photos/${data.id}.jpg`}
-          className={utilStyles.modalImage}
+          className={styles.modalImage}
         />
       </div>
 
-      <div className={utilStyles.unsplash}>
+      <div className={styles.unsplash}>
         <Link href={`https://unsplash.com/photos/${data.id}`}>
           <a
             target="_blank"
             rel="noopener noreferrer"
-            className={utilStyles.unsplashLink}
+            className={styles.unsplashLink}
           >
             Unsplash
           </a>
