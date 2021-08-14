@@ -1,4 +1,4 @@
-.unsplash {
+.unsplashButton {
   margin: 30px auto;
   text-align: center;
 }
@@ -8,11 +8,17 @@
   padding: 10px;
   border-radius: 10px;
   font-family: 'Bungee';
+  display: inline-flex;
+  vertical-align: middle;
 }
 
 .unsplashLink:hover {
   background: #757575;
   color: white;
+}
+
+.icon {
+  margin-right: 5px;
 }
 
 .image {

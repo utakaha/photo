@@ -3,6 +3,7 @@ import useSWR from 'swr'
 import fetch from 'node-fetch'
 import { SITE_URL } from '../lib/constants'
 import Link from 'next/link'
+import { SiUnsplash } from 'react-icons/si'
 
 const fetcher = (id) =>
       fetch(
@@ -24,13 +25,14 @@ export default function ModalPhoto({ id }) {
         />
       </div>
 
-      <div className={styles.unsplash}>
+      <div className={styles.unsplashButton}>
         <Link href={`https://unsplash.com/photos/${data.id}`}>
           <a
             target="_blank"
             rel="noopener noreferrer"
             className={styles.unsplashLink}
           >
+            <SiUnsplash className={styles.icon} size={18} />
             Unsplash
           </a>
         </Link>
