@@ -21,7 +21,10 @@ export default function Layout({ children }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content={`@${NAME}`} />
         <meta name="twitter:creator" content={`@${NAME}`} />
-        <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
       <Header />

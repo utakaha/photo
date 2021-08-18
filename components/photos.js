@@ -14,16 +14,16 @@ export default function Photos({ photosData }) {
     let tmpNum = 1
 
     photosData.forEach((photo) => {
-      switch(tmpNum) {
-      case leftNum:
-        leftColumn.push(photo)
-        break
-      case centerNum:
-        centerColumn.push(photo)
-        break
-      case rightNum:
-        rightColumn.push(photo)
-        break
+      switch (tmpNum) {
+        case leftNum:
+          leftColumn.push(photo)
+          break
+        case centerNum:
+          centerColumn.push(photo)
+          break
+        case rightNum:
+          rightColumn.push(photo)
+          break
       }
 
       tmpNum++
@@ -33,43 +33,34 @@ export default function Photos({ photosData }) {
     return [leftColumn, centerColumn, rightColumn]
   })()
 
-  const items = isMobile ? (
-    photosData.map((photo) => {
-      return (
-        <Link key={photo.id} href={`posts/${photo.id}`}>
-          <img
-            className={styles.listImage}
-            src={`/photos/${photo.id}.jpg`}
-          />
-        </Link>
-      )
-    })
-  ) : (
-    separateColumnPhotos.map((photos, index) => {
-      return (
-        <div key={index}>
-          {photos.map((photo) => {
-            return (
-              <Link
-                key={photo.id}
-                href={`/?postId=${photo.id}`}
-                as={`/posts/${photo.id}`}
-              >
-                <img
-                  className={styles.listImage}
-                  src={`/photos/${photo.id}.jpg`}
-                />
-              </Link>
-            )
-          })}
-        </div>
-      )
-    })
-  )
+  const items = isMobile
+    ? photosData.map((photo) => {
+        return (
+          <Link key={photo.id} href={`posts/${photo.id}`}>
+            <img className={styles.listImage} src={`/photos/${photo.id}.jpg`} />
+          </Link>
+        )
+      })
+    : separateColumnPhotos.map((photos, index) => {
+        return (
+          <div key={index}>
+            {photos.map((photo) => {
+              return (
+                <Link
+                  key={photo.id}
+                  href={`/?postId=${photo.id}`}
+                  as={`/posts/${photo.id}`}
+                >
+                  <img
+                    className={styles.listImage}
+                    src={`/photos/${photo.id}.jpg`}
+                  />
+                </Link>
+              )
+            })}
+          </div>
+        )
+      })
 
-  return (
-    <div className={styles.masonryGrid}>
-      {items}
-    </div>
-  )
+  return <div className={styles.masonryGrid}>{items}</div>
 }

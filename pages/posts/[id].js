@@ -19,10 +19,7 @@ export default function PostPage({ id }) {
           </a>
         </Link>
       </div>
-      <img
-        src={`/photos/${id}.jpg`}
-        className={styles.image}
-      />
+      <img src={`/photos/${id}.jpg`} className={styles.image} />
     </Layout>
   )
 }
@@ -31,7 +28,7 @@ export async function getStaticPaths() {
   const paths = getAllPhotoIds()
   return {
     paths,
-    fallback: false
+    fallback: false,
   }
 }
 
@@ -39,7 +36,7 @@ export async function getStaticProps({ params }) {
   const id = params.id
   return {
     props: {
-      id
-    }
+      id,
+    },
   }
 }

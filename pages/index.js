@@ -30,7 +30,7 @@ export async function getStaticProps() {
   const allPhotosData = getPhotosData()
   return {
     props: {
-      allPhotosData
-    }
+      allPhotosData,
+    },
   }
 }

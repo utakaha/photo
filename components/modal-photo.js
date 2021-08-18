@@ -6,9 +6,7 @@ import Link from 'next/link'
 import { SiUnsplash } from 'react-icons/si'
 
 const fetcher = (id) =>
-      fetch(
-        `${SITE_URL}/api/posts/${id}`
-      ).then((response) => response.json());
+  fetch(`${SITE_URL}/api/posts/${id}`).then((response) => response.json())
 
 export default function ModalPhoto({ id }) {
   const { data, error } = useSWR(id, fetcher)
@@ -19,10 +17,7 @@ export default function ModalPhoto({ id }) {
   return (
     <div className={styles.modalItem}>
       <div className={styles.imgContener}>
-        <img
-          src={`/photos/${data.id}.jpg`}
-          className={styles.modalImage}
-        />
+        <img src={`/photos/${data.id}.jpg`} className={styles.modalImage} />
       </div>
 
       <div className={styles.unsplashButton}>
