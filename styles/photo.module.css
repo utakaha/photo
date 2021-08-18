@@ -30,13 +30,15 @@ a.image {
 }
 
 .listImage {
-  width: 95%;
-  margin-bottom: 5%;
+  width: 100%;
+  margin-bottom: 20px;
   vertical-align: bottom;
 }
 
 .masonryGrid {
-  display: flex;
+  display: grid;
+  grid-column-gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .modalItem {
